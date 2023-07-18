@@ -11,6 +11,7 @@ import { FeaturedProducts } from './components/FeaturedProducts';
 import { NewProducts } from './components/NewProducts';
 import { Users } from './components/Users';
 import { UserDetails } from './components/UserDetails';
+import { Admin } from './components/Admin';
 
 function App() {
   return (
@@ -34,7 +35,8 @@ function App() {
         <Route path='/users/3' element={<UserDetails/> }/> */
         }
         <Route path='users/:userId' element={<UserDetails/> } />
-        
+       
+        <Route  path='users/:admin' element={<Admin/>}/>
       </Routes>
 
     </>
