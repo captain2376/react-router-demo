@@ -8,8 +8,8 @@ export const Product = () => {
             <input type='search' placeholder='Search Products'/>
         </div>
         <nav>
-             <Link to='featured'>Featured</Link>
-             <Link to='new'>New</Link>
+             <Link to="/product/featured">Featured</Link>
+             <Link to='/product/new'>New</Link>
         </nav>
         <Outlet />
         </>

@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link, NavLink } from 'react-router-dom'
+import { useAuth } from './auth'
 export const Navbar = () => {
     const navStyleHeading=({isActive})=>{
         return {
@@ -8,6 +9,7 @@ export const Navbar = () => {
             //color:isActive?'red':'blue'
         }
     }
+    const auth=useAuth()
     return (
         <nav className='main'>
 
@@ -17,6 +19,14 @@ export const Navbar = () => {
             <NavLink to='/' style={navStyleHeading}>Home</NavLink>
             <NavLink to='/About'  style={navStyleHeading}>About</NavLink>
             <NavLink to='/product'  style={navStyleHeading}>Products</NavLink>
+            <NavLink to='/users' style={navStyleHeading}>Users</NavLink>
+            <NavLink to='/profile' style={navStyleHeading}>Profile</NavLink>
+            {
+                !auth.user && <NavLink to='/login'
+               style={navStyleHeading}>
+                Login</NavLink>
+
+            }
         </nav>
     )
 }
