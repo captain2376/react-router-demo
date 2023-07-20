@@ -1,5 +1,6 @@
-
+import React from 'react';
 import './App.css';
+import { BrowserRouter as Router, Switch } from 'react-router-dom';
 import { Route, Routes } from 'react-router-dom';
 import { Home } from './components/Home';
 import Login from './components/Login';
@@ -15,10 +16,9 @@ import { Admin } from './components/Admin';
 import { Profile } from './components/Profile';
 import {RequireAuth} from './components/RequireAuth';
 import { AuthProvider } from './components/auth';
-
-
 import { UserDetails } from './components/UserDetails';
-import React from 'react';
+
+
 const LazyAbout=React.lazy(()=>import('./components/About'))
 function App() {
   return (
@@ -50,7 +50,8 @@ function App() {
         <Route path='profile' element={<RequireAuth> <Profile/></RequireAuth> }/>
 
         <Route path='login' element={<Login/>} />
-        
+      
+          
       </Routes>
       
       </AuthProvider>
